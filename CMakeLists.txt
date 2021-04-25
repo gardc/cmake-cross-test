@@ -11,3 +11,9 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory ("CMakeProject1")
 
 add_executable(project CMakeProject1/CMakeProject1.cpp)
+
+# add the binary tree to the search path for include files
+# so that we will find TutorialConfig.h
+target_include_directories(project PUBLIC
+                           "${PROJECT_BINARY_DIR}"
+                           )
